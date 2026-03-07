@@ -1,0 +1,159 @@
+.trip-detail-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.btn-back {
+  padding: 10px 20px;
+  background: #95a5a6;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.btn-back:hover {
+  background: #7f8c8d;
+}
+
+.trip-detail-card {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+}
+
+.trip-image {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+.trip-content {
+  padding: 30px;
+}
+
+h1 {
+  margin: 0 0 20px 0;
+  color: #333;
+  font-size: 32px;
+}
+
+.trip-info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.info-item {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.label {
+  font-weight: bold;
+  color: #666;
+  font-size: 14px;
+}
+
+.value {
+  color: #333;
+  font-size: 18px;
+}
+
+.price {
+  color: #27ae60;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.description {
+  margin-bottom: 30px;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 5px;
+}
+
+.description h3 {
+  margin-top: 0;
+  color: #333;
+}
+
+.description p {
+  color: #666;
+  line-height: 1.6;
+}
+
+.booking-section {
+  border-top: 2px solid #eee;
+  padding-top: 20px;
+}
+
+.booking-section h3 {
+  margin-top: 0;
+  color: #333;
+}
+
+.booking-form {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.booking-form label {
+  font-weight: 500;
+  color: #555;
+}
+
+.booking-form input {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  width: 100px;
+}
+
+.btn-book {
+  padding: 10px 30px;
+  background: #27ae60;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.btn-book:hover {
+  background: #229954;
+}
+
+.already-booked {
+  border-top: 2px solid #eee;
+  padding-top: 20px;
+  text-align: center;
+}
+
+.booked-message {
+  color: #e67e22;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.btn-cancel {
+  padding: 10px 30px;
+  background: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.btn-cancel:hover {
+  background: #c0392b;
+}

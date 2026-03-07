@@ -1,0 +1,15 @@
+<div class="home-container">
+  <header class="header">
+    <div class="header-content">
+      <h1>שלום {{ currentUser?.name }}</h1>
+      <nav class="nav-buttons">
+        <a routerLink="/home/trips-all" routerLinkActive="active" [routerLinkActiveOptions]="{exact: false}" class="nav-btn">All Trips</a>
+        <a routerLink="/home/my-trips" routerLinkActive="active" [routerLinkActiveOptions]="{exact: false}" class="nav-btn">My Trips</a>
+        <button (click)="logout()" class="nav-btn logout-btn">Logout</button>
+      </nav>
+    </div>
+  </header>
+  <main class="main-content">
+    <router-outlet ></router-outlet>
+  </main>
+</div>

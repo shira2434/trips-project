@@ -1,0 +1,25 @@
+<div class="my-trips-container">
+  <h2>הטיולים שלי</h2>
+  
+  @if (myTrips.length === 0) {
+    <div class="no-trips">
+      <p>אין לך טיולים רשומים כרגע</p>
+    </div>
+  }
+  
+  @if (myTrips.length > 0) {
+    <div class="trips-grid">
+      @for (trip of myTrips; track trip.bookingId) {
+        <div class="trip-card">
+          <img [src]="trip.image" [alt]="trip.name">
+          <div class="trip-info">
+            <h3>{{ trip.name }}</h3>
+            <p class="destination">{{ trip.destination }}</p>
+            <p class="price">₪{{ trip.price }}</p>
+            <button (click)="viewTrip(trip.id!)" class="btn-view">צפה בטיול</button>
+          </div>
+        </div>
+      }
+    </div>
+  }
+</div>

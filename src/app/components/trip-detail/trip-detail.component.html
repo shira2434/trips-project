@@ -1,0 +1,68 @@
+@if (trip) {
+  <div class="trip-detail-container">
+    <button (click)="goBack()" class="btn-back">← חזור</button>
+    
+    <div class="trip-detail-card">
+      <img [src]="trip.image" [alt]="trip.name" class="trip-image">
+      
+      <div class="trip-content">
+        <h1>{{ trip.name }}</h1>
+        
+        <div class="trip-info-grid">
+          <div class="info-item">
+            <span class="label">יעד:</span>
+            <span class="value">{{ trip.destination }}</span>
+          </div>
+          <div class="info-item">
+            <span class="label">תאריך התחלה:</span>
+            <span class="value">{{ trip.startDate }}</span>
+          </div>
+          <div class="info-item">
+            <span class="label">תאריך סיום:</span>
+            <span class="value">{{ trip.endDate }}</span>
+          </div>
+          <div class="info-item">
+            <span class="label">מחיר:</span>
+            <span class="value price">₪{{ trip.price }}</span>
+          </div>
+          <div class="info-item">
+            <span class="label">נרשמים:</span>
+            <span class="value">{{ totalRegistered }} אנשים</span>
+          </div>
+        </div>
+        
+        <div class="description">
+          <h3>תיאור:</h3>
+          <p>{{ trip.description }}</p>
+        </div>
+        
+        @if (!isAlreadyBooked) {
+          <div class="booking-section">
+            <h3>הרשמה לטיול</h3>
+            <div class="booking-form">
+              <label for="numberOfPeople">מספר אנשים:</label>
+              <input 
+                type="number" 
+                id="numberOfPeople" 
+                [(ngModel)]="numberOfPeople" 
+                min="1" 
+                max="10">
+              <button (click)="bookTrip()" class="btn-book">הירשם</button>
+            </div>
+          </div>
+        }
+        
+        @if (isAlreadyBooked) {
+          <div class="already-booked">
+            <p class="booked-message">משתמש רשום כבר לטיול</p>
+            <button (click)="cancelBooking()" class="btn-cancel">בטל הרשמה</button>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+} @else {
+  <div class="trip-detail-container">
+    <p>טוען...</p>
+  </div>
+}

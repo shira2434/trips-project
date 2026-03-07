@@ -1,0 +1,54 @@
+<div class="trips-container">
+  <div class="header-section">
+    <h2>כל הטיולים</h2>
+    @if (isAdmin()) {
+      <button (click)="showAddForm = !showAddForm" class="btn-add">
+        {{ showAddForm ? 'ביטול' : 'הוסף טיול' }}
+      </button>
+    }
+  </div>
+
+  @if (showAddForm) {
+    <div class="trip-form">
+      <h3>הוספת טיול חדש</h3>
+      <form (ngSubmit)="addTrip()">
+        <input [(ngModel)]="newTrip.name" name="name" placeholder="שם הטיול" required>
+        <input [(ngModel)]="newTrip.destination" name="destination" placeholder="יעד" required>
+        <input [(ngModel)]="newTrip.startDate" name="startDate" type="date" placeholder="תאריך התחלה" required>
+        <input [(ngModel)]="newTrip.endDate" name="endDate" type="date" placeholder="תאריך סיום" required>
+        <input [(ngModel)]="newTrip.price" name="price" type="number" placeholder="מחיר" required>
+        <textarea [(ngModel)]="newTrip.description" name="description" placeholder="תיאור" required></textarea>
+        <input [(ngModel)]="newTrip.image" name="image" placeholder="קישור לתמונה" required>
+        <button type="submit" class="btn-primary">הוסף</button>
+      </form>
+    </div>
+  }
+
+  <div class="trips-grid">
+    @if (loading) {
+      <p class="no-trips">טוען טיולים...</p>
+    } @else {
+      @for (trip of trips; track trip.id) {
+        <div class="trip-card">
+          <img [src]="trip.image" [alt]="trip.name">
+          <div class="trip-info">
+            <h3>{{ trip.name }}</h3>
+            <p class="destination">{{ trip.destination }}</p>
+            <p class="price">₪{{ trip.price }}</p>
+            <div class="trip-actions">
+              <button (click)="viewTrip(trip.id!)" class="btn-view">צפה בטיול</button>
+              @if (isAdmin()) {
+                <div class="admin-actions">
+                  <button (click)="editTrip(trip)" class="btn-edit">ערוך</button>
+                  <button (click)="deleteTrip(trip.id!)" class="btn-delete">מחק</button>
+                </div>
+              }
+            </div>
+          </div>
+        </div>
+      } @empty {
+        <p class="no-trips">אין טיולים זמינים כרגע</p>
+      }
+    }
+  </div>
+</div>
