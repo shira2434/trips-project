@@ -6,7 +6,6 @@ import { User } from '../../models/user.model';
 
 @Component({
   selector: 'app-welcome',
-  standalone: true,
   imports: [CommonModule, RouterModule],
   templateUrl: './welcome.component.html',
   styleUrls: ['./welcome.component.css']

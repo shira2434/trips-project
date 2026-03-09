@@ -1,3 +1,4 @@
+//אני
 import { Component, OnInit, inject, ChangeDetectorRef } from '@angular/core';
 // מייבא Component, OnInit, inject להזרקת תלויות,
 // ואת ChangeDetectorRef לשליטה ידנית בזיהוי שינויים
@@ -34,8 +35,6 @@ import { Booking } from '../../models/booking.model';
   selector: 'app-trip-detail',
 // סלקטור של הקומפוננטה
 
-  standalone: true,
-// קומפוננטה עצמאית
 
   imports: [CommonModule, FormsModule],
 // מודולים זמינים לקומפוננטה
@@ -125,8 +124,7 @@ export class TripDetailComponent implements OnInit {
     this.bookingsService.getBookings().subscribe(bookings => {
 // שולף את כל ההזמנות
 
-      this.totalRegistered = bookings
-        .filter(b => b.tripId === tripId)
+      this.totalRegistered = bookings.filter(b => b.tripId === tripId)
 // מסנן רק הזמנות של הטיול הנוכחי
         .reduce((sum, b) => sum + b.people, 0);
 // מסכם את מספר המשתתפים

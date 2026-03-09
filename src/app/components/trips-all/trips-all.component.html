@@ -11,14 +11,14 @@
   @if (showAddForm) {
     <div class="trip-form">
       <h3>הוספת טיול חדש</h3>
-      <form (ngSubmit)="addTrip()">
-        <input [(ngModel)]="newTrip.name" name="name" placeholder="שם הטיול" required>
-        <input [(ngModel)]="newTrip.destination" name="destination" placeholder="יעד" required>
-        <input [(ngModel)]="newTrip.startDate" name="startDate" type="date" placeholder="תאריך התחלה" required>
-        <input [(ngModel)]="newTrip.endDate" name="endDate" type="date" placeholder="תאריך סיום" required>
-        <input [(ngModel)]="newTrip.price" name="price" type="number" placeholder="מחיר" required>
-        <textarea [(ngModel)]="newTrip.description" name="description" placeholder="תיאור" required></textarea>
-        <input [(ngModel)]="newTrip.image" name="image" placeholder="קישור לתמונה" required>
+      <form [formGroup]="tripForm" (ngSubmit)="addTrip()">
+        <input formControlName="name" placeholder="שם הטיול">
+        <input formControlName="destination" placeholder="יעד">
+        <input formControlName="startDate" type="date" placeholder="תאריך התחלה">
+        <input formControlName="endDate" type="date" placeholder="תאריך סיום">
+        <input formControlName="price" type="number" placeholder="מחיר">
+        <textarea formControlName="description" placeholder="תיאור"></textarea>
+        <input formControlName="image" placeholder="קישור לתמונה">
         <button type="submit" class="btn-primary">הוסף</button>
       </form>
     </div>

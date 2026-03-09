@@ -1,40 +1,40 @@
 <div class="edit-container">
   <h2>עריכת טיול</h2>
   
-  <form (ngSubmit)="updateTrip()" class="trip-form">
+  <form [formGroup]="tripForm" (ngSubmit)="updateTrip()" class="trip-form">
     <div class="form-group">
       <label>שם הטיול</label>
-      <input [(ngModel)]="trip.name" name="name" required>
+      <input formControlName="name">
     </div>
 
     <div class="form-group">
       <label>יעד</label>
-      <input [(ngModel)]="trip.destination" name="destination" required>
+      <input formControlName="destination">
     </div>
 
     <div class="form-group">
       <label>תאריך התחלה</label>
-      <input [(ngModel)]="trip.startDate" name="startDate" type="date" required>
+      <input formControlName="startDate" type="date">
     </div>
 
     <div class="form-group">
       <label>תאריך סיום</label>
-      <input [(ngModel)]="trip.endDate" name="endDate" type="date" required>
+      <input formControlName="endDate" type="date">
     </div>
 
     <div class="form-group">
       <label>מחיר</label>
-      <input [(ngModel)]="trip.price" name="price" type="number" required>
+      <input formControlName="price" type="number">
     </div>
 
     <div class="form-group">
       <label>תיאור</label>
-      <textarea [(ngModel)]="trip.description" name="description" required></textarea>
+      <textarea formControlName="description"></textarea>
     </div>
 
     <div class="form-group">
       <label>קישור לתמונה</label>
-      <input [(ngModel)]="trip.image" name="image" required>
+      <input formControlName="image">
     </div>
 
     <div class="form-buttons">

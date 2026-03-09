@@ -27,7 +27,7 @@ import { forkJoin } from 'rxjs';
   selector: 'app-my-trips',
 // שם הסלקטור של הקומפוננטה לשימוש ב-HTML
 
-  standalone: true,
+  //standalone: true,
 // מציין שזו קומפוננטה עצמאית
 
   imports: [CommonModule],

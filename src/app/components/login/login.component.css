@@ -62,12 +62,22 @@ input {
   background: #f8f9fa;
 }
 
+input.ng-invalid.ng-touched {
+  border-color: #e74c3c;
+  background: #fff5f5;
+}
+
 input:focus {
   outline: none;
   border-color: #00b4db;
   background: white;
   box-shadow: 0 0 0 4px rgba(0, 180, 219, 0.1);
   transform: translateY(-2px);
+}
+
+input.ng-invalid.ng-touched:focus {
+  border-color: #e74c3c;
+  box-shadow: 0 0 0 4px rgba(231, 76, 60, 0.1);
 }
 
 .btn-primary {
