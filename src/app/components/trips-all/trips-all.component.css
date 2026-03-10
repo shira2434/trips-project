@@ -69,12 +69,18 @@ h2 {
 .trip-form textarea {
   width: 100%;
   padding: 14px 16px;
-  margin-bottom: 15px;
+  margin-bottom: 5px;
   border: 2px solid #e0e0e0;
   border-radius: 12px;
   font-size: 15px;
   transition: all 0.3s ease;
   background: #f8f9fa;
+}
+
+.trip-form input.ng-invalid.ng-touched,
+.trip-form textarea.ng-invalid.ng-touched {
+  border-color: #e74c3c;
+  background: #fff5f5;
 }
 
 .trip-form input:focus,
@@ -83,6 +89,25 @@ h2 {
   border-color: #00b4db;
   background: white;
   box-shadow: 0 0 0 4px rgba(0, 180, 219, 0.1);
+}
+
+.trip-form input.ng-invalid.ng-touched:focus,
+.trip-form textarea.ng-invalid.ng-touched:focus {
+  border-color: #e74c3c;
+  box-shadow: 0 0 0 4px rgba(231, 76, 60, 0.1);
+}
+
+.form-field {
+  margin-bottom: 20px;
+}
+
+.error-message {
+  display: block;
+  color: #e74c3c;
+  font-size: 13px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  font-weight: 500;
 }
 
 .trip-form textarea {

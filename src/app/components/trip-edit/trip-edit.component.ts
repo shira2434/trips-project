@@ -9,7 +9,6 @@ import { Trip } from '../../models/trip.model';
 
 @Component({
   selector: 'app-trip-edit',
-  standalone: true,
   imports: [CommonModule, ReactiveFormsModule],
   templateUrl: './trip-edit.component.html',
   styleUrls: ['./trip-edit.component.css']

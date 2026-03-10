@@ -12,13 +12,55 @@
     <div class="trip-form">
       <h3>הוספת טיול חדש</h3>
       <form [formGroup]="tripForm" (ngSubmit)="addTrip()">
-        <input formControlName="name" placeholder="שם הטיול">
-        <input formControlName="destination" placeholder="יעד">
-        <input formControlName="startDate" type="date" placeholder="תאריך התחלה">
-        <input formControlName="endDate" type="date" placeholder="תאריך סיום">
-        <input formControlName="price" type="number" placeholder="מחיר">
-        <textarea formControlName="description" placeholder="תיאור"></textarea>
-        <input formControlName="image" placeholder="קישור לתמונה">
+        <div class="form-field">
+          <input formControlName="name" placeholder="שם הטיול">
+          @if (tripForm.get('name')?.invalid && tripForm.get('name')?.touched) {
+            <span class="error-message">שם הטיול חובה</span>
+          }
+        </div>
+        
+        <div class="form-field">
+          <input formControlName="destination" placeholder="יעד">
+          @if (tripForm.get('destination')?.invalid && tripForm.get('destination')?.touched) {
+            <span class="error-message">יעד חובה</span>
+          }
+        </div>
+        
+        <div class="form-field">
+          <input formControlName="startDate" type="date" placeholder="תאריך התחלה">
+          @if (tripForm.get('startDate')?.invalid && tripForm.get('startDate')?.touched) {
+            <span class="error-message">תאריך התחלה חובה</span>
+          }
+        </div>
+        
+        <div class="form-field">
+          <input formControlName="endDate" type="date" placeholder="תאריך סיום">
+          @if (tripForm.get('endDate')?.invalid && tripForm.get('endDate')?.touched) {
+            <span class="error-message">תאריך סיום חובה</span>
+          }
+        </div>
+        
+        <div class="form-field">
+          <input formControlName="price" type="number" placeholder="מחיר">
+          @if (tripForm.get('price')?.invalid && tripForm.get('price')?.touched) {
+            <span class="error-message">מחיר חובה וחייב להיות חיובי</span>
+          }
+        </div>
+        
+        <div class="form-field">
+          <textarea formControlName="description" placeholder="תיאור"></textarea>
+          @if (tripForm.get('description')?.invalid && tripForm.get('description')?.touched) {
+            <span class="error-message">תיאור חובה</span>
+          }
+        </div>
+        
+        <div class="form-field">
+          <input formControlName="image" placeholder="קישור לתמונה">
+          @if (tripForm.get('image')?.invalid && tripForm.get('image')?.touched) {
+            <span class="error-message">קישור לתמונה חובה</span>
+          }
+        </div>
+        
         <button type="submit" class="btn-primary">הוסף</button>
       </form>
     </div>

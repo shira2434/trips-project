@@ -173,6 +173,12 @@
       "userId": "3",
       "tripId": "3",
       "people": 3
+    },
+    {
+      "id": "a0joki4ah",
+      "userId": "2",
+      "tripId": "2",
+      "people": 1
     }
   ]
 }
