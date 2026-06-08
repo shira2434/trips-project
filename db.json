@@ -137,7 +137,7 @@
       "name": "Istanbul Wonders",
       "destination": "Istanbul, Turkey",
       "startDate": "2026-08-01",
-      "endDate": "2026-08-06",
+      "endDate": "2026-08-07",
       "price": 1500,
       "description": "Hagia Sophia, Blue Mosque, and Bosphorus cruise.",
       "image": "https://picsum.photos/id/1049/400/200"
@@ -173,12 +173,6 @@
       "userId": "3",
       "tripId": "3",
       "people": 3
-    },
-    {
-      "id": "a0joki4ah",
-      "userId": "2",
-      "tripId": "2",
-      "people": 1
     }
   ]
 }
