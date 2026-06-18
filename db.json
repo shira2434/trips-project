@@ -39,6 +39,18 @@
       "name": "123 12",
       "password": "12",
       "isAdmin": false
+    },
+    {
+      "id": "038d",
+      "name": "admin",
+      "password": "admin12",
+      "isAdmin": false
+    },
+    {
+      "id": "55a0",
+      "name": "a",
+      "password": "a12",
+      "isAdmin": false
     }
   ],
   "trips": [
@@ -173,6 +185,12 @@
       "userId": "3",
       "tripId": "3",
       "people": 3
+    },
+    {
+      "id": "8cr6xg83g",
+      "userId": "038d",
+      "tripId": "1",
+      "people": 1
     }
   ]
 }
